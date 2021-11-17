@@ -1,0 +1,606 @@
+@import 'responsive'
+
+.main-header
+	&__text
+		background-color: #3453f3
+		border: 0.2px solid #002638
+		p
+			font-size: 15px
+			line-height: 1.6
+			color: #fff
+			letter-spacing: 0.15px
+			text-align: center
+			padding: 5px
+			font-weight: 500
+			+media(sm)
+				font-size: 12px
+				line-height: 1.2
+				
+	&__block
+		background-color: #002638
+		padding: 18px 0
+		+media(sm)
+			display: none	
+
+	&__info
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		+media(md)
+			justify-content: center
+
+	&__map
+		cursor: pointer
+		background-image: url(../img/icons/map.svg)
+		background-position: left center
+		background-repeat: no-repeat
+		background-size: 18px 20px
+		font-size: 15px
+		line-height: 1.2
+		color: #fff
+		padding: 3px 0
+		padding-left: 28px
+		margin-right: 36px
+		font-weight: 500
+
+	&__list
+		display: flex
+		align-items: center
+		margin-right: auto
+		+media(md)
+			order: 2
+			flex-basis: 100%
+			justify-content: center
+			margin-top: 12px
+		li:not(:last-child)
+			margin-right: 25px
+			+media(mdx)
+				margin-right: 20px
+
+	&__link
+		display: inline-block
+		font-size: 15px
+		line-height: 1.2
+		letter-spacing: 0.15px
+		color: #fff
+		transition: 0.25s color
+		&:hover
+			color: #85979f
+
+	&__shop
+		font-size: 15px
+		color: #fff
+		letter-spacing: 0.15px
+		margin-right: 38px
+		font-weight: 500
+		+media(lgm)
+			display: none
+		span
+			display: inline-block
+			color: #85979f
+			margin-right: 6px
+
+	&__phone
+		background-image: url(../img/icons/phone.svg)
+		background-position: left center
+		background-repeat: no-repeat
+		font-size: 14px
+		line-height: 1.7
+		letter-spacing: 0.15px
+		color: #fff
+		padding: 3px 0
+		padding-left: 27px
+		margin-right: 24px
+
+	&__lang	
+		display: flex
+		align-items: center
+
+	&__item
+		font-size: 15px
+		line-height: 1.2
+		color: #85979f
+		&--active
+			color: #fff
+
+	&__wrap
+		display: flex	
+		align-items: center
+		padding-top: 27px	
+		margin-bottom: 14px
+		+media(sm)
+			display: none	
+
+	&__logo
+		display: block	
+		max-width: 152px
+		width: 100%	
+		margin-right: auto	
+		+media(lgm)
+			max-width: 120px
+		img
+			display: block	
+			width: 100%	
+
+	&__search
+		max-width: 590px
+		width: 100%	
+		min-height: 62px	
+		display: flex	
+		justify-content: space-between
+		align-items: center
+		border: 1px solid #e9e8f4
+		border-radius: 15px
+		overflow: hidden
+		margin-left: 20px
+		margin-right: 24px	
+		+media(lgm)
+			min-height: 45px
+
+	&__input
+		display: block	
+		width: 100%	
+		min-height: 62px
+		font-size: 14px	
+		line-height: 1.7	
+		color: #9391a7
+		background-color: #fcfbfc
+		border: none
+		outline: none
+		padding: 9px 24px	
+		padding-right: 20px	
+		+media(lgm)
+			min-height: 45px
+
+	&__btn
+		cursor: pointer
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 62px	
+		height: 62px	
+		border: none
+		outline: none
+		background-color: #fcfbfc
+		padding: 0px	
+		+media(lgm)
+			height: 45px
+		svg
+			display: block	
+			width: 15px	
+			height: 15px	
+			fill: #001377
+
+	&__desc
+		display: block
+		font-size: 9px	
+		letter-spacing: 2.3px
+		text-transform: lowercase
+		text-align: center
+		color: #002638
+
+	&__row
+		display: flex	
+		align-items: center
+
+	&__col
+		display: block	
+		background-repeat: no-repeat
+		background-size: 19px
+		background-position: left center
+		font-size: 12px	
+		line-height: 1.2	
+		color: #ff002e
+		text-transform: uppercase
+		padding: 4px 0
+		padding-left: 29px	
+		margin-right: 24px	
+		font-weight: 700	
+
+		&--brends
+			background-image: url(../img/icons/brends.svg)
+
+		&--discount
+			background-image: url(../img/icons/discount.svg)
+
+	&__user
+		display: flex
+		align-items: center
+
+	&__box
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 62px
+		height: 62px
+		border: 1px solid #e9e8f4
+		border-radius: 15px
+		+media(lgm)
+			width: 45px
+			height: 45px
+		svg
+			display: block
+			fill: #3453f3
+
+		&:not(:last-child)
+			margin-right: 20px
+
+		&--favorites
+			svg
+				width: 20px	
+				height: 18px	
+
+		&--cart 
+			position: relative
+			svg
+				width: 20px	
+				height: 20px	
+
+		&--login
+			svg
+				width: 16px	
+				height: 20px
+
+	&__count
+		position: absolute
+		z-index: 5
+		right: -10px
+		top: -10px
+		width: 20px	
+		height: 20px	
+		display: flex	
+		justify-content: center
+		align-items: center
+		font-size: 12px	
+		line-height: 1.2	
+		color: #fff
+		border-radius: 50%
+		background-color: #ff002e
+		padding: 5px
+		font-family: Roboto
+		font-weight: 500	
+		&:after
+			position: absolute
+			content: ' '
+			top: 50%
+			left: -2px
+			width: 2px
+			height: 5px
+			transform: translateY(-50%)
+			background-color: #fff
+
+		&:before
+			position: absolute
+			content: ' '
+			bottom: -5px
+			left: 50%
+			width: 2px
+			height: 5px
+			transform: translateX(-50%)
+			background-color: #fff
+
+
+.menu
+	&__wrap
+		position: relative
+		display: flex
+		justify-content: space-between
+		margin-bottom: 20px
+		+media(sm)
+			display: none	
+		&:after
+			position: absolute
+			content: ' '
+			bottom: 0px
+			width: 100%
+			height: 1px
+			background-color: #e9e8f4
+
+		&>li
+
+
+			&:not(:last-child)
+				margin-right: 22px
+				+media(lgm)
+					margin-right: 28px
+				+media(smdx)
+					margin-right: 18px
+
+			&:hover 
+				.menu__item
+					color: #3453f3
+					border-color: #3453f3
+
+				.menu__item:after,
+				.menu__item:before
+					filter: invert(21%) sepia(47%) saturate(5793%) hue-rotate(232deg) brightness(102%) contrast(91%)
+
+				.menu__box
+					opacity: 1
+					visibility: visible
+
+	&__box
+		position: absolute
+		opacity: 0
+		visibility: hidden
+		left: 0px
+		top: calc(100% - 1px)
+		width: 100%
+		z-index: 15
+		background-color: #fff
+		margin-top: 22px
+		transition: 0.25s opacity, 0.25s visibility, 0.25s background-color	
+
+
+		&:after
+			left: -48px
+
+		&:before
+			content: ""
+			position: absolute
+			z-index: -1
+			top: -28px
+			left: -22px
+			width: calc(100% + 44px)
+			height: 35px
+			background-color: transparent
+
+	&__holder
+		//max-height: 500px
+		display: inline-block
+		position: relative
+		//display: flex
+		//justify-content: center
+		//flex-direction: column
+		//flex-wrap: wrap
+		columns: 6
+		column-gap: 40px
+		border: 1px solid #e9e8f4
+		background-color: #fff
+		border-radius: 20px
+		padding: 28px 14px
+		//margin: 0 -20px
+		+media(mdx)
+			//max-height: 730px
+		+media(md)
+			//max-height: 800px
+		&:after
+			position: absolute
+			content: ' '
+			z-index: -1
+			top: 0px
+			left: -25px
+			width: calc(100% + 50px)
+			height: 100%
+			background-color: #fff
+			transition: 0.25s background-color
+
+	&__item
+		position: relative
+		background-repeat: no-repeat
+		background-size: 20px
+		background-position: left top 8px
+		display: inline-block
+		font-size: 12px
+		line-height: 1.2
+		color: #002638
+		text-transform: uppercase
+		padding-top: 10px
+		padding-left: 29px
+		padding-right: 10px
+		padding-bottom: 28px
+		border-bottom: 4px solid #fff
+		font-weight: 700
+		transition: 0.25s color, 0.25s border
+		+media(lgm)
+			padding-left: 0px
+			padding-bottom: 22px
+
+		&:after,
+		&:before
+			position: absolute
+			content: ' '
+			background-repeat: no-repeat
+			transition: 0.25s filter
+
+		&:after
+			top: 15px
+			right: 0px
+			width: 5px
+			height: 4px
+			background-size: 5px 4px
+			background-image: url(../img/icons/arrow-menu.svg)
+			
+
+		&:before
+			top: 8px
+			left: 0px
+			width: 19px
+			height: 19px
+			background-size: 19px
+			filter: invert(87%) sepia(11%) saturate(1237%) hue-rotate(196deg) brightness(95%) contrast(83%)
+			+media(lgm)
+				background-image: none
+
+		&--sport
+			&:before
+				background-image: url(../img/icons/menu/sport.svg)
+
+		&--mountain
+			&:before
+				background-image: url(../img/icons/menu/mountain.svg)
+
+		&--bicycle_loads
+			&:before
+				background-image: url(../img/icons/menu/bicycle_loads.svg)
+
+		&--roller_skates
+			&:before
+				background-image: url(../img/icons/menu/roller_skates.svg)
+
+		&--racket_sports
+			&:before
+				background-image: url(../img/icons/menu/racket_sports.svg)
+
+		&--rest_water
+			&:before
+				background-image: url(../img/icons/menu/rest_water.svg)
+
+		&--clothes_shoes
+			&:before
+				background-image: url(../img/icons/menu/clothes_shoes.svg)
+	
+
+	&__row
+		display: inline-block
+		//width: calc(100% / 6 - 40px)
+		//margin: 0 20px
+		//+media(lgs)
+			//width: calc(100% / 5 - 40px)
+		//+media(mdx)
+			//width: calc(100% / 4 - 40px)
+
+		&--add
+			.menu__col
+				font-size: 12px	
+				line-height: 1.2	
+				color: #000
+				padding: 12px 0
+				margin-bottom: 0px	
+				text-transform: uppercase
+				border-bottom: 1px dashed #e9e8f4
+				font-weight: 700	
+
+	&__title
+		display: inline-block
+		font-size: 12px	
+		line-height: 1.2	
+		color: #000000
+		background-color: #e9e8f4
+		border-radius: 1px
+		text-transform: uppercase
+		padding: 5px 2px
+		margin-bottom: 10px	
+
+	&__col
+		display: block
+		font-size: 14px	
+		line-height: 1.2	
+		color: #002638
+		margin-bottom: 12px	
+		transition: 0.25s color
+		&:hover
+			color: #3453f3
+
+	&__more,
+	&__show
+		font-size: 14px	
+		line-height: 1.2	
+		color: #3453f3
+		margin-top: 11px
+		margin-bottom: 20px	
+
+	&__show
+		display: block	
+
+	&__more
+		display: none	
+		&--active
+			display: block	
+
+
+.mob-block
+	display: none
+	background-color: #e9e8f4
+	border-radius: 0px
+	padding: 5px 0
+	+media(sm)
+		display: block
+
+	&__wrap
+		display: flex
+		align-items: center
+
+	&__logo
+		display: block
+		margin-right: auto
+		img
+			display: block
+			width: 100%
+			max-width: 60px
+
+	&__text
+		display: block
+		font-size: 4px
+		line-height: 1
+		letter-spacing: 0.9px
+		color: #002638
+		margin-top: 2px
+
+	&__address
+		display: block
+		position: relative
+		max-width: 180px
+		width: 100%
+		min-height: 35px
+		font-size: 12px
+		line-height: 1.2
+		letter-spacing: 0.15px
+		background-color: #fff
+		border-radius: 6px
+		text-align: center
+		padding-top: 8px
+		span
+			display: inline-block
+			border-bottom: 1px dashed #262832
+			padding-bottom: 3px
+
+
+
+.mob-menu
+	display: none
+	background-color: #fff
+	padding-top: 19px
+	border-bottom: 1px solid #e9e8f4
+	padding-bottom: 21px
+	margin-bottom: 12px
+	+media(sm)
+		display: block
+
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__link
+		display: block
+		position: relative
+		font-size: 11px
+		line-height: 1.2
+		letter-spacing: 0.15px
+		color: #002638
+		padding-top: 26px
+		&:after
+			position: absolute
+			content: ' '
+			top: 0px
+			left: 50%
+			width: 20px
+			height: 20px
+			background-repeat: no-repeat
+			background-position: top center
+			background-size: 20px
+			transform: translateX(-50%)
+			filter: invert(46%) sepia(98%) saturate(6494%) hue-rotate(229deg) brightness(99%) contrast(93%)
+
+		&--catalog
+			&:after
+				background-image: url(../img/icons/btn-catalog.svg)
+
+		&--favorites
+			&:after
+				background-image: url(../img/icons/btn-favorites.svg)
+
+		&--search
+			&:after
+				background-image: url(../img/icons/btn-search.svg)

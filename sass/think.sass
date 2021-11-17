@@ -1,0 +1,99 @@
+@import 'responsive'
+
+.think
+	margin-bottom: 24px	
+	+media(md)
+		margin-bottom: 12px	
+
+	&__wrap
+		display: grid
+		grid-template-columns: max-content 1fr max-content max-content
+		background-color: #fcfbfc
+		border: 1px solid #e9e8f4
+		border-radius: 15px
+		padding: 25px 30px
+		+media(md)
+			grid-template-columns: 1fr 1fr 1fr
+			padding: 0px 10px
+			padding-top: 12px	
+
+	&__item	
+		grid-column: span 1
+		display: flex
+		align-items: center
+		+media(md)
+			grid-column: 1/-1
+		&--title
+			font-size: 24px
+			line-height: 1.2
+			+media(md)
+				font-size: 18px
+				margin-bottom: 26px
+
+		&--row
+			justify-self: center
+			+media(md)
+				grid-column: auto
+				justify-self: auto
+				margin-bottom: 18px
+
+		&--reviews
+			font-size: 16px	
+			line-height: 1.5	
+			letter-spacing: 0.15px
+			color: #79778a
+			margin-right: 22px
+			font-weight: 500
+			+media(md)
+				grid-column: span 2
+				justify-self: flex-end
+				margin-right: 0px
+				margin-bottom: 18px
+
+		&--all
+			position: relative
+			font-size: 16px	
+			line-height: 1.5
+			color: #002638	
+			letter-spacing: 0.15px
+			padding-right: 41px	
+			font-weight: 500	
+			+media(md)
+				width: max-content
+				margin-bottom: 18px
+			&:after
+				position: absolute
+				content: ' '
+				top: 50%
+				transform: translateY(-50%)
+				right: 0px
+				width: 25px
+				height: 21px
+				background: #3453f3
+				opacity: 0.25
+				border-radius: 3px
+
+			svg
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 10px
+				width: 20px	
+				height: 9px	
+				fill: #1200dc
+				transition: 0.25s width
+				
+	&__image
+		margin-right: 24px
+		max-width: 99px
+		min-width: 99px
+		width: 100%	
+		img
+			display: block	
+
+	&__count
+		font-size: 18px	
+		line-height: 1.2	
+		color: #002638
+		font-weight: 500
+		

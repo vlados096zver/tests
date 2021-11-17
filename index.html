@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Каманчеро</title>
+
+		<link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+<svg class="svg-about">
+    <g id="icon-search">
+        <path d="M23.6736 20.7495L18.9998 16.0765C18.7889 15.8656 18.5029 15.7485 18.2029 15.7485H17.4387C18.7325 14.0939 19.5014 12.0129 19.5014 9.74905C19.5014 4.36365 15.137 0 9.75072 0C4.3644 0 0 4.36365 0 9.74905C0 15.1344 4.3644 19.4981 9.75072 19.4981C12.015 19.4981 14.0964 18.7295 15.7511 17.4358V18.1998C15.7511 18.4998 15.8684 18.7857 16.0793 18.9966L20.7531 23.6696C21.1938 24.1102 21.9063 24.1102 22.3423 23.6696L23.6689 22.3431C24.1096 21.9025 24.1096 21.1901 23.6736 20.7495ZM9.75072 15.7485C6.4364 15.7485 3.75029 13.0674 3.75029 9.74905C3.75029 6.4353 6.43175 3.74965 9.75072 3.74965C13.065 3.74965 15.7511 6.43065 15.7511 9.74905C15.7511 13.0628 13.0697 15.7485 9.75072 15.7485Z"/>
+    </g>
+    <g id="icon-arrow">
+        <path d="M13.1061 0.0674227C12.9306 0.162101 12.8212 0.342135 12.8212 0.537947V3.58703L0.550721 3.58703C0.246723 3.58703 0 3.82803 0 4.12498C0 4.42193 0.246723 4.66293 0.550721 4.66293L12.8212 4.66293L12.8212 7.71201C12.8212 7.90854 12.9306 8.08858 13.1061 8.18254C13.2816 8.27794 13.496 8.27148 13.6656 8.16748L19.493 4.58044C19.653 4.48146 19.75 4.31003 19.75 4.12498C19.75 3.93993 19.653 3.7685 19.493 3.66952L13.6656 0.0824853C13.576 0.0279733 13.4739 0 13.3719 0C13.2808 0 13.189 0.0229524 13.1061 0.0674227Z"/>
+    </g>
+    <g id="icon-menu">
+        <path d="M4.88958 0.628862L2.83617 3.21029C2.64138 3.44645 2.34107 3.44645 2.1544 3.21029L0.100984 0.628862C-0.0938068 0.384562 0.00358848 0.197266 0.30389 0.197266H4.68668C4.99509 0.197266 5.08437 0.384562 4.88958 0.628862Z"/>
+    </g>
+    <g id="btn-heart">
+       <path d="M17.2422 2.46484C15.3086 0.8125 12.4609 1.12891 10.668 2.95703L10 3.66016L9.29688 2.95703C7.53906 1.12891 4.65625 0.8125 2.72266 2.46484C0.507812 4.36328 0.402344 7.73828 2.37109 9.77734L9.19141 16.8086C9.61328 17.2656 10.3516 17.2656 10.7734 16.8086L17.5938 9.77734C19.5625 7.73828 19.457 4.36328 17.2422 2.46484Z"></path>
+    </g>
+    <g id="btn-cart"> 
+        <path d="M.853 0a.833.833 0 1 0 0 1.667h.41a.833.833 0 0 1 .8.605l2.643 9.25a2.5 2.5 0 0 0 2.404 1.811h7.615a2.5 2.5 0 0 0 2.321-1.571l2.457-6.144a1.667 1.667 0 0 0-1.547-2.285H4.1l-.435-1.52A2.5 2.5 0 0 0 1.263 0h-.41ZM7.52 20a2.5 2.5 0 1 0 0-5.001 2.5 2.5 0 0 0 0 5.001ZM14.187 20a2.5 2.5 0 1 0 0-5.001 2.5 2.5 0 0 0 0 5.001Z"/>
+    </g>
+    <g id="btn-login">
+        <path d="M8 13.1739C12.3386 13.1739 16 13.8789 16 16.599C16 19.32 12.3146 20 8 20C3.66237 20 0 19.295 0 16.575C0 13.8539 3.68538 13.1739 8 13.1739ZM8 0C10.9391 0 13.294 2.35402 13.294 5.29105C13.294 8.22808 10.9391 10.5831 8 10.5831C5.0619 10.5831 2.70601 8.22808 2.70601 5.29105C2.70601 2.35402 5.0619 0 8 0Z"/>
+    </g>
+    <g id="btn-category">
+        <path d="M16.6169 10.7515C18.2038 10.7564 19.4903 12.0658 19.5 13.6857V16.5568C19.4904 18.1782 18.2052 19.4902 16.6169 19.5H13.8044C12.2176 19.4901 10.935 18.1768 10.9302 16.5568V13.6857C10.9302 12.0652 12.217 10.7515 13.8044 10.7515H16.6169ZM4.53805 10.7516C4.83336 10.7193 5.12081 10.8619 5.27835 11.1189C5.4359 11.376 5.4359 11.7022 5.27835 11.9592C5.12081 12.2163 4.83336 12.3589 4.53805 12.3266H3.38306C2.64635 12.3266 2.04777 12.9337 2.04292 13.6857V16.5209C2.06166 17.2669 2.65217 17.8657 3.38306 17.8799H6.21322C6.56784 17.8823 6.90874 17.7402 7.16032 17.4851C7.4119 17.2299 7.55337 16.8829 7.55336 16.5209V12.2636L7.54133 12.1577C7.52803 11.8761 7.66312 11.6048 7.90087 11.4509C8.16833 11.2778 8.51201 11.288 8.76917 11.4767C9.02633 11.6654 9.14534 11.9947 9.06984 12.3086V16.5479C9.06984 18.1733 7.77905 19.491 6.18677 19.491H3.38306C1.80456 19.4576 0.53275 18.1593 0.5 16.5479V13.6857C0.5 12.906 0.804028 12.1583 1.34496 11.6078C1.8859 11.0572 2.61924 10.7492 3.38306 10.7516H4.53805ZM16.6169 12.3266H13.8044C13.0691 12.3266 12.4731 12.9351 12.4731 13.6857V16.5568C12.4707 16.918 12.6102 17.2651 12.8604 17.5205C13.1106 17.7759 13.4506 17.9183 13.8044 17.9159H16.6169C16.9707 17.9183 17.3107 17.7759 17.5609 17.5205C17.8111 17.2651 17.9506 16.918 17.9483 16.5568V13.6857C17.9483 13.3252 17.808 12.9796 17.5583 12.7247C17.3087 12.4698 16.97 12.3266 16.6169 12.3266ZM16.6169 0.5C18.192 0.538179 19.4586 1.83515 19.4912 3.44315V6.30531C19.5006 7.08351 19.2068 7.83365 18.6743 8.39067C18.1419 8.9477 17.4145 9.26597 16.6522 9.27546H15.4884C15.0941 9.23237 14.7951 8.89272 14.7951 8.48792C14.7951 8.08312 15.0941 7.74347 15.4884 7.70038H16.6169C16.9739 7.69801 17.3152 7.55035 17.5651 7.29015C17.8151 7.02994 17.953 6.67869 17.9483 6.31431V3.44315C17.9388 2.69661 17.3482 2.09378 16.6169 2.08408H13.8044C13.0691 2.08408 12.4731 2.69256 12.4731 3.44315V7.73638L12.4626 7.84316C12.3995 8.2266 12.0707 8.51513 11.6796 8.51042C11.4746 8.50574 11.2799 8.41743 11.1391 8.26523C10.9983 8.11303 10.923 7.9096 10.9302 7.70038V3.44315C10.9278 2.66341 11.2296 1.91478 11.7689 1.36257C12.3082 0.810365 13.0406 0.5 13.8044 0.5H16.6169ZM6.19559 0.5C7.78585 0.504942 9.07381 1.81975 9.07865 3.44315V6.31431C9.07865 7.09405 8.77463 7.84174 8.23369 8.39226C7.69276 8.94278 6.95942 9.25085 6.19559 9.24847H3.38306C1.79622 9.24355 0.509669 7.9342 0.5 6.31431V3.44315C0.509626 1.82178 1.7948 0.509827 3.38306 0.5H6.19559ZM6.19559 2.08408H3.38306C3.02541 2.07683 2.67995 2.21681 2.42453 2.47247C2.16911 2.72814 2.02522 3.07798 2.02529 3.44315V6.31431C2.01802 6.68414 2.15873 7.04102 2.41496 7.30259C2.67118 7.56416 3.02078 7.7078 3.38306 7.70038H6.19559C6.55256 7.69801 6.89386 7.55035 7.14379 7.29015C7.39372 7.02994 7.53162 6.67869 7.52691 6.31431V3.44315C7.52211 2.6946 6.92886 2.08899 6.19559 2.08408Z"/>
+    </g>
+</svg>
+
+
+<header class="main-header">
+    <div class="main-header__text">
+        <p> Безкоштовна доставка ВСІХ товарів по Україні</p>
+    </div>
+    <div class="main-header__block">
+        <div class="container">
+            <div class="main-header__info">
+                <p class="main-header__map">Кривий Ріг</p>
+                <ul class="main-header__list">
+                    <li><a href="#" class="main-header__link">Прокат</a></li>
+                    <li><a href="#" class="main-header__link">Ремонт</a></li>
+                    <li><a href="#" class="main-header__link">Контакти</a></li>
+                    <li><a href="#" class="main-header__link">Оплата та доставка</a></li>
+                    <li><a href="#" class="main-header__link">Бонусна система</a></li>
+                </ul>
+                <p class="main-header__shop"><span>Магазин: </span>Львів, вул. Листопадна 16</p>
+                <a href="tel:+380507802108" class="main-header__phone">+38 (050) 780 21 08</a>
+                <ul class="main-header__lang">
+                    <li><a href="#" class="main-header__item main-header__item--active">Укр</a></li>
+                    <li><a href="#" class="main-header__item">Рус</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-header__wrap"> 
+            <a href="#" class="main-header__logo">
+                <span class="main-header__elem">
+                    <img src="img/icons/logo-header.svg" alt="logo-header">    
+                </span>
+                <span class="main-header__desc">спортивне спорядження</span>
+            </a>
+            <div class="main-header__search">
+              <input type="text" class="main-header__input" placeholder="Я шукаю...">
+              <button class="main-header__btn">
+                <svg viewBox="0 0 24 24">
+                    <use xlink:href="#icon-search"></use>
+                </svg>
+              </button>
+            </div>
+            <ul class="main-header__row">   
+                <li><a href="#" class="main-header__col main-header__col--brends">Бренди</a></li>
+                <li><a href="#" class="main-header__col main-header__col--discount">Знижки</a></li>
+            </ul>
+            <div class="main-header__user"> 
+                <a href="#" class="main-header__box main-header__box--favorites">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </a>
+                <a href="#" class="main-header__box main-header__box--cart">
+                    <span class="main-header__count">1</span>
+                    <svg viewBox="0 0 20 20">
+                        <use xlink:href="#btn-cart"></use>
+                    </svg>
+                </a>
+                <a href="#" class="main-header__box main-header__box--login">
+                    <svg viewBox="0 0 16 20">
+                        <use xlink:href="#btn-login"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <ul class="menu__wrap">
+            <li><a href="#" class="menu__item menu__item--sport">Зимовий спорт</a>
+                <div class="menu__box">
+                    <ul class="menu__holder">
+                        <li class="menu__row">
+                             <h4 class="menu__title">Наплічники</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Наплічники 0-44 л</a></li>
+                                <li><a href="#" class="menu__col">Наплічники 45-110 л</a></li>
+                                <li><a href="#" class="menu__col">Наплічники дитячі</a></li>
+                                <li><a href="#" class="menu__col">Намети експедиційні </a></li>
+                                <li><a href="#" class="menu__col">Намети кемпінгові</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                            <h4 class="menu__title">Намети</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Намети трекінгові</a></li>
+                                <li><a href="#" class="menu__col">Намети експедиційні</a></li>
+                                <li><a href="#" class="menu__col">Намети кемпінгові</a></li>
+                                <li><a href="#" class="menu__col">Намети - аксесуари</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні </a></li>
+                                <li><a href="#" class="menu__col">Намети - аксесуари</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                        </li>
+                       <li class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Меблі для кемпінгу</a></li>
+                                <li><a href="#" class="menu__col">Грилі та аксесуари</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Засоби догляду за взуттям</a></li>
+                                <li><a href="#" class="menu__col">Устілки і шнурівки</a></li>
+                                <li><a href="#" class="menu__col">Альпіністські черевики</a></li>
+                                <li><a href="#" class="menu__col">Засоби догляду за взуттям</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </li>
+                       <li class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Казани туристичні</a></li>
+                                <li><a href="#" class="menu__col">М'ячі футбольні, волейбольні, баскетбольні </a></li>
+                                <li><a href="#" class="menu__col">Холодильники, термоконтейнери</a></li>
+                                <li><a href="#" class="menu__col">Грилі та аксесуари</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </li>
+                        <li class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </li>
+                       <li class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </li>
+                       <div class="menu__row menu__row--add">
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Тенти та гамаки для гірських походів</a></li>
+                                <li><a href="#" class="menu__col">Тенти та гамаки</a></li>
+                                <li><a href="#" class="menu__col">Тенти та гамаки для гірських походів</a></li>
+                                <li><a href="#" class="menu__col">Тенти та гамаки</a></li>
+                                <li><a href="#" class="menu__col">Тенти та гамаки</a></li>
+                                <li><a href="#" class="menu__col">Велоодяг і взуття</a></li>
+                                <li><a href="#" class="menu__col">Тенти та гамаки</a></li>
+                                <li><a href="#" class="menu__col">Велоодяг і взуття</a></li>
+                            </ul>
+                            <a href="#" class="menu__show">Більше категорій</a>
+                       </li>
+                   </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--mountain">Туризм та альпінізм</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--bicycle_loads">Велотовари</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--roller_skates">Ролики та скейти</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--racket_sports">Ракеткові види спорту</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--rest_water">Відпочинок на воді</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="menu__item menu__item--clothes_shoes">Одяг та взуття</a>
+                <div class="menu__box">
+                    <div class="menu__holder">
+                        <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Ланцюги</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                 <a href="" class="menu__more">Більше</a>
+                            </ul>
+                            <h4 class="menu__title">Тенти та гамаки для гірських походів</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Пальники туристичні</a></li>
+                                <li><a href="#" class="menu__col">Пальне для пальників</a></li>
+                            </ul>
+                             <a href="" class="menu__more">Більше</a>
+                       </div>
+                       <div class="menu__row">
+                            <h4 class="menu__title">Тенти та гамаки</h4>
+                            <ul class="menu__list">
+                                <li><a href="#" class="menu__col">Велошини</a></li>
+                                <li><a href="#" class="menu__col">Велокамери </a></li>
+                                <li><a href="#" class="menu__col">Рафки коліс</a></li>
+                                <li><a href="#" class="menu__col">Шатуни і зірки</a></li>
+                                <li><a href="#" class="menu__col">Педалі</a></li>
+                                <li><a href="#" class="menu__col">Гальма і деталі гальм</a></li>
+                                <li><a href="#" class="menu__col">Перекидки задні</a></li>
+                                <li><a href="#" class="menu__col">Перекидки передні</a></li>
+                                <li><a href="#" class="menu__col">Касети</a></li>
+                            </ul>
+                            <a href="" class="menu__more">Більше</a>
+                       </div>
+                   </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="mob-block">
+        <div class="container">
+            <div class="mob-block__wrap">
+                <a href="" class="mob-block__logo">
+                    <img src="img/icons/logo-header.svg" alt="">
+                    <span class="mob-block__text">спортивне спорядження</span>
+                </a>
+                <p class="mob-block__address"><span>Львів, вул.  Листопадна 16</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="mob-menu">
+        <div class="container">
+            <div class="mob-menu__wrap">
+                <a href="#" class="mob-menu__link mob-menu__link--catalog">Каталог</a>
+                <a href="#" class="mob-menu__link mob-menu__link--favorites">Вибране</a>
+                <a href="#" class="mob-menu__link mob-menu__link--search">Пошук</a>
+                <a href="#" class="mob-menu__link mob-menu__link--cart">Кошик</a>
+                <button>Інше</button>
+            </div>
+        </div>
+    </section>
+</header>
+
+<section class="info">
+    <div class="container">
+        <div class="info__block">
+            <div class="swiper info__wrap">
+                <div class="swiper-wrapper">
+                    <div class="info__item swiper-slide">
+                        <picture class="info__image">
+                            <source srcset="img/slider/2x.webp 2x, img/slider/1x.webp 1x" type="image/webp">
+                            <source srcset="img/slider/2x.png 2x, img/slider/1x.png 1x">
+                            <img src="img/slider/1x.png" alt="slide_1">
+                        </picture>
+                        <div class="info__box">
+                            <h3 class="info__title">Нова коллекція товарів для активного зимового відпочинку</h3>
+                            <div class="info__text">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує.</p>
+                            </div>
+                            <a href="#" class="info__link">Детальніше</a>
+                        </div>
+                    </div>
+                    <div class="info__item swiper-slide">
+                        <picture class="info__image">
+                            <source media="(max-width: 767px)" srcset="img/slider/mob/2x.webp 2x, img/slider/mob/1x.webp 1x" type="image/webp">
+                            <source media="(max-width: 767px)" srcset="img/slider/mob/1x.png 2x, img/slider/mob/1x.png 1x">
+                            <source srcset="img/slider/2x.webp 2x, img/slider/1x.webp 1x" type="image/webp">
+                            <source srcset="img/slider/2x.png 2x, img/slider/1x.png 1x">
+                            <img class="swiper-lazy" data-src="img/slider/1x.png" src="img/slider/1x.png" alt="slide_1">
+                        </picture>
+                        <div class="info__box">
+                            <h3 class="info__title">Нова коллекція товарів для активного зимового відпочинку</h3>
+                            <div class="info__text">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує.</p>
+                            </div>
+                            <a href="#" class="info__link">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+             <div class="swiper-pagination"></div>
+            <div class="swiper-button-next">
+                <svg viewBox="0 0 20 9">
+                    <use xlink:href="#icon-arrow"/>
+                </svg>
+            </div>
+            <div class="swiper-button-prev">
+                <svg viewBox="0 0 20 9">
+                    <use xlink:href="#icon-arrow"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="think">
+    <div class="container">
+        <div class="think__wrap">
+            <h3 class="think__item think__item--title">Що про нас думають клієнти ?</h3>
+            <div class="think__item think__item--row"> 
+                <div class="think__image">  
+                    <img src="img/icons/logo-google.svg" alt="logo-google">
+                </div>  
+                <p class="think__count">4,7</p>
+            </div>  
+            <p class="think__item think__item--reviews">Відгуків: 752</p>
+            <a href="#" class="think__item think__item--all">
+                <span>Дивитись усі відгуки</span>
+                <svg viewBox="0 0 20 9">
+                    <use xlink:href="#icon-arrow"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <div class="container">
+        <div class="reviews__block">    
+            <div class="swiper reviews__wrap">
+                <div class="swiper-wrapper">
+                    <div class="reviews__item swiper-slide">
+                        <div class="reviews__text">
+                            <div class="reviews__block">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                            </div>
+                        </div>
+                        <button class="reviews__more" data-hide="Згорнути" data-show="Детальніше"></button>
+                       <div class="stars">
+                          <span class="stars__active" style="width: 90%;"></span>
+                        </div>
+                        <div class="reviews__inner">
+                            <div class="reviews__image">
+                                <img src="img/reviews/dima.png" alt="dima">
+                            </div>
+                            <p class="reviews__fio">Дмитрий М.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__item swiper-slide">
+                        <div class="reviews__text">
+                            <div class="reviews__block">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                            </div>
+                        </div> 
+                         <button class="reviews__more" data-hide="Згорнути" data-show="Детальніше"></button>
+                        <div class="stars">
+                          <span class="stars__active" style="width: 50%;"></span>
+                        </div>
+                        <div class="reviews__inner">
+                            <div class="reviews__image">
+                                <img src="img/reviews/nikolay.png" alt="nikolay">
+                            </div>
+                            <p class="reviews__fio">Николай И.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__item swiper-slide">
+                        <div class="reviews__text">
+                            <div class="reviews__block">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                            </div>
+                        </div>
+                        <button class="reviews__more" data-hide="Згорнути" data-show="Детальніше"></button>
+                        <div class="stars">
+                          <span class="stars__active" style="width: 30%;"></span>
+                        </div>
+                        <div class="reviews__inner">
+                            <div class="reviews__image">
+                                <img src="img/reviews/ilona.png" alt="ilona">
+                            </div>
+                            <p class="reviews__fio">Илона С.</p>
+                        </div>
+                    </div>
+                     <div class="reviews__item swiper-slide">
+                        <div class="reviews__text">
+                            <div class="reviews__block">
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                                <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                                 <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                                  <p>Якісний товар, привітний персонал який радо прийде на допомогу, покаже, проконсультує. Окремо хочу подякувати за гарантійне обслуговування  речей.</p>
+                            </div>
+                        </div>
+                         <button class="reviews__more" data-hide="Згорнути" data-show="Детальніше"></button>
+                        <div class="stars">
+                          <span class="stars__active" style="width: 30%;"></span>
+                        </div>
+                        <div class="reviews__inner">
+                            <div class="reviews__image">
+                                <img src="img/reviews/ilona.png" alt="ilona">
+                            </div>
+                            <p class="reviews__fio">Илона С.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div> 
+            <div class="swiper-button-next">
+                <svg viewBox="0 0 20 9">
+                    <use xlink:href="#icon-arrow"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="container">
+        <div class="advantages__wrap">
+            <div class="advantages__item">
+                <div class="advantages__inner">
+                    <div class="advantages__image">
+                       <img src="img/icons/waypoint-flag.svg" alt="waypoint">
+                    </div>
+                    <div class="advantages__text">
+                        <p class="advantages__count">25 років</p>
+                        <div class="advantages__desc">
+                            <p>Продаємо спортивне спорядження та знаємо про нього все</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <div class="advantages__inner">
+                    <div class="advantages__image">
+                       <img src="img/icons/products.svg" alt="products">
+                    </div>
+                    <div class="advantages__text">
+                        <p class="advantages__count">15 000 товарів</p>
+                        <div class="advantages__desc">
+                            <p>Маємо власний ремонт та прокат товарів</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <div class="advantages__inner">
+                    <div class="advantages__image">
+                       <img src="img/icons/workshop.svg" alt="workshop">
+                    </div>
+                    <div class="advantages__text">
+                        <p class="advantages__count">Майстерня</p>
+                        <div class="advantages__desc">
+                            <p>Маємо власний ремонт та прокат товарів</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product">
+    <div class="container">
+        <h3 class="title">Найпопулярніші товари сезону</h3>
+        <div class="product__wrapper">
+        <div class="swiper product__list">
+          <div class="swiper-scrollbar"></div>
+             <div class="swiper-wrapper">
+                <div class="swiper-slide">  
+                    <ul class="product__wrapper">
+                        <li class="product__box product__box--active">Зимовий спорт</li>
+                        <li class="product__box">Туризм та альпінізм</li>
+                        <li class="product__box">Вело товари</li>
+                        <li class="product__box">Ролики та скейти</li>
+                        <li class="product__box">Ракеткові види спорту</li>
+                        <li class="product__box">Відпочинок на воді</li>
+                        <li class="product__box">Одяг та взуття</li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+        <div class="product__wrap">
+            <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+                <div class="product__pic">
+                    <picture class="product__image product__image--visible">
+                        <source srcset="img/product/webp/product1@2x.webp 2x, img/product/webp/product1@1x.webp 1x" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product1@1x.png" data-srcset="img/product/product1@2x.png 2x" class="lazyload" loading="lazy"  alt="product">
+                    </picture>
+                    <picture class="product__image">
+                        <source srcset="img/product/webp/product7@2x.webp 2x, img/product/webp/product7@1x.webp 1x" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product7@1x.png" data-srcset="img/product/product7@2x.png 2x" class="lazyload" loading="lazy"  alt="product">
+                    </picture>
+                    <picture class="product__image">
+                        <source srcset="img/product/webp/product1@2x.webp 2x, img/product/webp/product1@1x.webp 1x" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product1@1x.png" data-srcset="img/product/product1@2x.png 2x" class="lazyload" loading="lazy"  alt="product">
+                    </picture>
+                    <picture class="product__image">
+                        <source srcset="img/product/webp/product7@2x.webp 2x, img/product/webp/product7@1x.webp 1x" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product7@1x.png" data-srcset="img/product/product7@2x.png 2x" class="lazyload" loading="lazy"  alt="product">
+                    </picture>
+                 </div>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>1 099</span> грн</p>
+                </div>
+                <div class="product__submenu">
+                    <div class="product__gallery">    
+                        <div class="product__elem product__elem--active" data-index="0">
+                            <source srcset="img/product/webp/product1@2x.webp 2x, img/product/webp/product1@1x.webp 1x" type="image/webp">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product1@1x.png" data-srcset="img/product/product1@2x.png" class="lazyload" loading="lazy" alt="product_1">
+                        </div>
+                        <div class="product__elem" data-index="1"> 
+                            <source srcset="img/product/webp/product1@7x.webp 2x, img/product/webp/product7@1x.webp 1x" type="image/webp">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"  data-srcset="img/product/product7@2x.png" class="lazyload" loading="lazy" alt="product_1">
+                        </div>
+                         <div class="product__elem" data-index="2">
+                            <source srcset="img/product/webp/product1@2x.webp 2x, img/product/webp/product1@1x.webp 1x" type="image/webp">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product1@1x.png" data-srcset="img/product/product1@2x.png" class="lazyload" loading="lazy" alt="product_1">
+                        </div>
+                        <div class="product__elem" data-index="3"> 
+                            <source srcset="img/product/webp/product1@7x.webp 2x, img/product/webp/product7@1x.webp 1x" type="image/webp">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"  data-srcset="img/product/product7@2x.png" class="lazyload" loading="lazy" alt="product_1">
+                        </div>
+                        <a href="#" class="product__details">+ 5</a>
+                    </div>
+                    <div class="product__change">
+                        <a href="" class="product__col">S</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+                <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product2@2x.webp 2x, img/product/webp/product2@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product2@1x.png" data-srcset="img/product/product2@2x.png" class="lazyload" loading="lazy" alt="product_2">
+                </picture>
+
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                <div class="product__block product__block--inner">
+                   <p class="product__price"><span>1 499</span> грн</p> 
+                   <p class="product__price product__price--discount"><span>1 099</span> грн</p>
+                </div>
+            </div>
+            <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+               <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product3@2x.webp 2x, img/product/webp/product3@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product3@1x.png" data-srcset="img/product/product3@2x.png" class="lazyload" loading="lazy" alt="product_3">
+                </picture>
+                <p class="product__name">1Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>999</span> грн</p>
+                </div>
+            </div>
+            <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+               <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product6@2x.webp 2x, img/product/webp/product6@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product6@1x.png" data-srcset="img/product/product6@2x.png" class="lazyload" loading="lazy" alt="product_6">
+                </picture>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>2756</span> грн</p>
+                </div>
+            </div>
+
+             <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+               <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product2@2x.webp 2x, img/product/webp/product2@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product2@1x.png" data-srcset="img/product/product2@2x.png" class="lazyload" loading="lazy" alt="product_2">
+                </picture>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>1 499</span> грн</p>
+                </div>
+            </div>
+             <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+               <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product4@2x.webp 2x, img/product/webp/product4@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product4@1x.png" data-srcset="img/product/product4@2x.png" class="lazyload" loading="lazy" alt="product_4">
+                </picture>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>786</span> грн</p>
+                </div>
+            </div>
+             <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+                <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product5@2x.webp 2x, img/product/webp/product5@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product5@1x.png" data-srcset="img/product/product5@2x.png" class="lazyload" loading="lazy" alt="product_5">
+                </picture>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>1 499</span> грн</p>
+                </div>
+            </div>
+             <div class="product__item">
+                <button class="product__cart">
+                    <svg viewBox="0 0 20 18">
+                        <use xlink:href="#btn-heart"></use>
+                    </svg>
+                </button>
+                <picture class="product__image product__image--visible">
+                    <source srcset="img/product/webp/product2@2x.webp 2x, img/product/webp/product2@1x.webp 1x" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/product/product2@1x.png" data-srcset="img/product/product2@2x.png" class="lazyload" loading="lazy" alt="product_2">
+                </picture>
+                <p class="product__name">Монолыжа Plastkon OneFoot Miniski Черная с красным еще ... </p>
+                 <div class="product__block">
+                    <p class="product__price"><span>1 499</span> грн</p>
+                </div>
+            </div>
+        </div>
+        <button class="product__btn"><span class="product__row">Ще 60 товарів</span></button>
+    </div>
+</section>
+
+<section class="advantages advantages--find"> 
+    <div class="container"> 
+        <h3 class="title">Як нас знайти</h3>
+        <div class="advantages__wrap">
+            <div class="advantages__item">
+                <div class="advantages__inner">
+                    <div class="advantages__image">
+                       <img src="img/icons/shop.svg" alt="shop">
+                    </div>
+                    <div class="advantages__text">
+                        <div class="advantages__desc">
+                            <p>Магазин, прокат та майстерня <br>в одному місці</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <div class="advantages__inner">
+                    <div class="advantages__image">
+                       <img src="img/icons/parking.svg" alt="waypoint">
+                    </div>
+                    <div class="advantages__text">
+                        <div class="advantages__desc">
+                            <p>Є паркінг <br>для клієнтів біля магазину</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end advantages__wrap-->
+    </div>
+</section>
+
+<section class="map">
+    <div class="container">
+        <div class="map__wrap" data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.5569116186093!2d24.04256901570847!3d49.8131972793926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae7fb89321ad1%3A0x5c31768921c6c1ce!2z0YPQuy4g0JvQuNGB0YLQvtC_0LDQtNC90LDRjywgMTYsINCb0YzQstC-0LIsINCb0YzQstC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNzkwMzQ!5e0!3m2!1sru!2sua!4v1636386772745!5m2!1sru!2sua"></div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="container">
+      <div class="main-footer__wrap">
+        <div class="main-footer__aside">    
+            <a href="" class="main-footer__logo">
+                <img src="img/icons/logo-footer.svg">
+            </a>
+            <p class="main-footer__desc">All rights reserved 2021</p>
+        </div>
+          
+          <div class="main-footer__block">
+            <div class="main-footer__item">
+                <h4 class="main-footer__title">Сторінки</h4>
+                <ul class="main-footer__col">
+                    <li><a href="" class="main-footer__link">Оплата і доставка</a></li>
+                    <li><a href="" class="main-footer__link">Контакти</a></li>
+                    <li><a href="" class="main-footer__link">Повернення</a></li>
+                    <li><a href="" class="main-footer__link">Подарунковий сертифікат</a></li>
+                    <li><a href="" class="main-footer__link">Бадмінтон та тенісний корт </a></li>
+                    <li><a href="" class="main-footer__link">Договір публічної оферти</a></li>
+                </ul>
+            </div>
+            <div class="main-footer__item">
+                <h4 class="main-footer__title">Сервіс</h4>
+                  <ul class="main-footer__col">
+                    <li><a href="" class="main-footer__link">Ремонт</a></li>
+                    <li><a href="" class="main-footer__link">Прокат</a></li>
+                    <li><a href="" class="main-footer__link">Бонусна система</a></li>
+                    <li><a href="" class="main-footer__link">Про магазин</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="main-footer__contacts">   
+            <div class="main-footer__holder">   
+                <h4 class="main-footer__title">Адреса та графік роботи</h4>
+                <p class="main-footer__address">Львів, вул. Листопадна 16</p>
+                <div class="main-footer__text"> 
+                    <p><strong>Пн-Пт:</strong>     10:00 - 19:00</p>
+                    <p><strong>Субота:</strong>   10:00 - 18:00</p>
+                    <p><strong>Неділя:</strong>     Вихідний</p>
+                </div>
+            </div>
+            <div class="main-footer__holder">   
+                <h4 class="main-footer__title">Телефони</h4>
+                <div class="main-footer__wrapper">   
+                    <h5 class="main-footer__subtitle">Інтернет-магазин</h5>
+                    <a href="tel:+380507802108" class="main-footer__phone">(050) 780-21-08</a>
+                    <h5 class="main-footer__subtitle">Магазин</h5>
+                    <a href="tel:+380689494867" class="main-footer__phone">(068) 94-94-867</a>
+                    <h5 class="main-footer__subtitle">Ремонт та прокат</h5>
+                    <a href="tel:+380631541880" class="main-footer__phone">(063) 154-18-80</a>
+                </div>
+                <div class="main-footer__socials">  
+                    <a href="#" class="main-footer__user main-footer__user--instagram"></a>
+                    <a href="#" class="main-footer__user main-footer__user--youtube"></a>
+                    <a href="#" class="main-footer__user main-footer__user--facebook"></a>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</footer>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/lazysizes.min.js" async=""></script>
+<script src="js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,121 @@
+@import 'responsive'
+
+.info
+	position: relative
+	margin-bottom: 24px
+
+	&__block
+		position: relative
+
+	&__wrap
+		border-radius: 20px
+
+	&__item
+		min-height: 475px
+		padding: 0 50px
+		+media(sm)
+			min-height: initial
+			background-color: #e9f0f4
+			padding: 0 20px
+		&:first-child
+			border-top-left-radius: 20px
+			border-bottom-left-radius: 20px
+			overflow: hidden
+
+		&:last-child
+			border-top-right-radius: 20px
+			border-bottom-right-radius: 20px
+			overflow: hidden
+
+	&__image
+		display: block
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 100%	
+		height: 100%
+		border-radius: 20px
+		overflow: hidden
+		+media(sm)
+			display: none
+		img
+			display: block	
+			width: 100%
+			height: 100%	
+			object-fit: cover
+			object-position: center
+
+	&__box
+		position: relative
+		z-index: 2
+		+media(sm)
+			display: flex
+			flex-direction: column
+			align-items: center
+
+	&__title
+		max-width: 620px
+		font-size: 36px
+		line-height: 1.19
+		color: #002638
+		padding-top: 107px
+		margin-bottom: 27px
+		font-weight: 700
+		+media(mdx)
+			max-width: 500px
+			font-size: 29px
+		+media(sm)
+			font-size: 22px
+			text-align: center
+			padding-top: 25px
+
+	&__text
+		max-width: 480px
+		margin-bottom: 42px
+		+media(sm)
+			margin-bottom: 36px
+		p
+			font-size: 16px
+			line-height: 1.1875
+			color: #002638
+			+media(sm)
+				font-size: 14px
+				text-align: center
+
+	&__link
+		display: inline-block
+		position: relative
+		font-size: 16px
+		line-height: 1.5
+		color: #3453f3
+		background-color: #e9f0f4
+		border: 1px solid #3453f3
+		border-radius: 15px
+		padding: 18px 15px
+		padding-right: 94px
+		margin-bottom: 114px
+		font-weight: normal
+		font-family: TTNorms
+		+media(sm)
+			margin-bottom: 127px
+		&:after,
+		&:before
+			position: absolute
+			font-size: 10px
+			top: 50%
+			transform: translateY(-50%) scale(1, 2)
+
+		&::before
+			content: '➤ ➤'
+			right: 17px
+			color: #c3cef8
+			transition: 0.25s color
+
+		&::after 
+			content: '➤'
+			right: 42px
+			color: #3453f3
+
+		&:hover
+			&:before
+				color: #3453f3

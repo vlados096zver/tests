@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "TTNorms";
+    src: url("TTNormsRegular.eot");
+    src: url("TTNormsRegular.eot?#iefix") format("embedded-opentype"),
+    url("TTNormsRegular.woff") format("woff"),
+    url("TTNormsRegular.woff2") format("woff2"),
+    url("TTNormsRegular.ttf") format("truetype"),
+    url('TTNormsRegular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTNorms";
+    src: url("TTNormsMedium.eot");
+    src: url("TTNormsMedium.eot?#iefix") format("embedded-opentype"),
+    url("TTNormsMedium.woff") format("woff"),
+    url("TTNormsMedium.woff2") format("woff2"),
+    url("TTNormsMedium.ttf") format("truetype"),
+    url('TTNormsMedium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTNorms";
+    src: url("TTNormsBold.eot");
+    src: url("TTNormsBold.eot?#iefix") format("embedded-opentype"),
+    url("TTNormsBold.woff") format("woff"),
+    url("TTNormsBold.woff2") format("woff2"),
+    url("TTNormsBold.ttf") format("truetype"),
+    url('TTNormsBold.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+

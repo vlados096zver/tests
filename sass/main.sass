@@ -1,0 +1,139 @@
+@import 'responsive'
+
+body
+	margin: 0
+	padding: 0
+	width: 100%
+	min-height: 100vh
+	overflow-x: hidden
+	-webkit-text-size-adjust: 100%
+	color: #363636
+	background-color: #fff
+	position: relative
+	font-size: 16px
+	line-height: 1.2
+	font-weight: normal
+	font-style: normal
+	font-family: TTNorms
+
+* 
+	box-sizing: border-box
+
+*::after,
+*::before
+	box-sizing: border-box
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	bottom: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+
+img
+	max-width: 100%
+	height: auto
+
+.svg-about
+	display: none
+
+.container
+	max-width: 1335px
+	padding: 0 25px
+	margin: 0 auto
+	+media(sm)
+		padding: 0 8px
+
+.title
+	font-size: 24px
+	line-height: 1.2
+	color: #002638
+	padding-bottom: 24px
+	font-weight: 500
+	+media(sm)
+		padding-bottom: 15px
+
+.info,
+.reviews
+	.swiper-button-next,
+	.swiper-button-prev
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		background-color: #fff
+		margin: 0px
+		transform: translateY(-50%)
+		border: 1px solid #e9e8f4
+		&:after
+			display: none
+		svg
+			display: block
+			width: 20px
+			height: 9px
+			fill: #3453f3
+			transition: 0.25s fill
+
+		&.swiper-button-disabled
+			opacity: 1
+			svg
+				fill: #c3cef8
+
+	.swiper-button-next
+		right: -25px
+		+media(sm)
+			right: 10px
+
+	.swiper-button-prev
+		transform: translateY(-50%) scale(-1)
+		left: -25px
+		+media(sm)
+			left: 10px	
+
+.info
+	.swiper-button-next,
+	.swiper-button-prev
+		+media(sm)
+			top: initial
+			bottom: 40px
+			transform: translateY(0) scale(-1)
+
+	.swiper-button-next
+		+media(sm)
+			transform: translateY(0)
+
+	.swiper-pagination
+		bottom: 21px
+		display: flex
+		justify-content: center
+		+media(sm)
+			bottom: 65px
+
+	.swiper-pagination-bullet
+		display: block
+		width: 44px
+		height: 4px
+		background: #c3cef8
+		border-radius: 2px
+		opacity: 1
+		+media(sm)
+			width: 15px
+		&.swiper-pagination-bullet-active
+			background: #3453f3
+
+.reviews,
+.product
+	.swiper-horizontal > 
+		.swiper-scrollbar
+			left: 0px
+			width: 100%
+			height: 2px
+			background-color: #e9e8f4
+
+			.swiper-scrollbar-drag
+				background-color: #79778a

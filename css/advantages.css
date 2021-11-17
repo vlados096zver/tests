@@ -1,0 +1,129 @@
+.advantages {
+	background-color: rgba(242, 246, 249, 0.59);
+	padding-top: 70px;
+	padding-bottom: 35px;
+	margin-bottom: 50px;
+}
+
+.advantages--find {
+	background-color: transparent;
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+.advantages--find .advantages__item {
+	border: none;
+	background: #f7fcfc;
+	border-radius: 15px;
+	margin-bottom: 22px;
+}
+
+.advantages--find .advantages__desc p {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.advantages__wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 -12px;
+}
+
+.advantages__item {
+	width: calc(100% / 3 - 24px);
+	flex-grow: 1;
+	border: 2px solid #fff;
+	border-radius: 15px;
+	padding: 14px 25px;
+	padding-right: 20px;
+	margin: 0 12px;
+	margin-bottom: 35px;
+}
+
+.advantages__inner {
+	display: flex;
+	align-items: center;
+}
+
+.advantages__image {
+	flex-shrink: 0;
+	width: 90px;
+	height: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: #fff;
+	margin: 14px;
+	box-shadow: 0 0 0 6px #f1f6f9, 0 0 0 7px #fff, 0 0 0 13px #f1f6f9, 0 0 0 14px rgba(255, 255, 255, 0.5);
+	position: relative;
+}
+
+.advantages__image img {
+	display: block;
+}
+
+.advantages__text {
+	flex-grow: 1;
+	padding-left: 15px;
+}
+
+.advantages__count {
+	font-size: 20px;
+	line-height: 1.2;
+	color: #002638;
+	padding-bottom: 15px;
+	font-weight: 500;
+}
+
+.advantages__desc p {
+	font-size: 16px;
+	line-height: 1.18;
+	color: #002638;
+}
+
+@media screen and (max-width: 1022px) {
+
+.advantages {
+	padding: 44px 0;
+	margin-bottom: 35px;
+}
+
+.advantages--find {
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+.advantages__wrap {
+	margin: 0px;
+}
+
+.advantages__item {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.advantages__item:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+}
+
+@media screen and (max-width: 767px) {
+
+.advantages--find .advantages__item {
+	margin-bottom: 12px;
+}
+
+.advantages__image {
+	width: 62px;
+	height: 62px;
+}
+
+.advantages__desc p {
+	font-size: 14px;
+}
+
+}
+
